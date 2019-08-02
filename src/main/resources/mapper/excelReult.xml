@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace=" com.lifesense.exxcel.repository.ExcelMapper">
+
+    <insert id="insertResult" parameterType="com.lifesense.exxcel.dto.ExcelDTO">
+        INSERT INTO information(no,machineId,suaKaDate,suaKaTime,name,workTime,averageTime)
+        VALUES
+        <foreach collection="information" item="information" separator=",">
+            (#{information.no},#{information.machineId},#{information.suaKaDate},#{information.suaKaTime},#{information.name},
+             #{information.workTime},#{information.averageTime})
+        </foreach>
+    </insert>
+    
+    <select id="findResult" resultType="List">
+        select
+    </select>
+</mapper>
